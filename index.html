@@ -1,0 +1,1096 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PWRfuel | Fuel Your Potential</title>
+<meta name="description" content="PWRfuel – pre-workout gummies utviklet med fokus på smak, innovasjon og trening.">
+<style>
+
+        * {
+
+            margin: 0;
+
+            padding: 0;
+
+            box-sizing: border-box;
+
+        }
+
+        html {
+
+            scroll-behavior: smooth;
+
+        }
+
+        body {
+
+            font-family: Arial, Helvetica, sans-serif;
+
+            background: #080808;
+
+            color: #ffffff;
+
+            line-height: 1.6;
+
+        }
+
+        a {
+
+            color: inherit;
+
+            text-decoration: none;
+
+        }
+
+        nav {
+
+            position: fixed;
+
+            top: 0;
+
+            left: 0;
+
+            width: 100%;
+
+            height: 72px;
+
+            background: rgba(8, 8, 8, 0.92);
+
+            backdrop-filter: blur(12px);
+
+            border-bottom: 1px solid #222;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: space-between;
+
+            padding: 0 7%;
+
+            z-index: 1000;
+
+        }
+
+        .logo {
+
+            font-size: 27px;
+
+            font-weight: 900;
+
+            letter-spacing: -1px;
+
+        }
+
+        .logo span {
+
+            color: #a0a0a0;
+
+        }
+
+        nav ul {
+
+            display: flex;
+
+            gap: 30px;
+
+            list-style: none;
+
+        }
+
+        nav ul li a {
+
+            font-size: 14px;
+
+            font-weight: 700;
+
+            text-transform: uppercase;
+
+            letter-spacing: 1px;
+
+            color: #bbbbbb;
+
+            transition: 0.3s;
+
+        }
+
+        nav ul li a:hover {
+
+            color: white;
+
+        }
+
+        .hero {
+
+            min-height: 100vh;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            text-align: center;
+
+            padding: 120px 20px 80px;
+
+            background:
+
+                radial-gradient(circle at center, #1b1b1b 0%, #080808 55%);
+
+        }
+
+        .hero-content {
+
+            max-width: 900px;
+
+        }
+
+        .hero-small {
+
+            color: #999;
+
+            font-size: 14px;
+
+            letter-spacing: 4px;
+
+            text-transform: uppercase;
+
+            font-weight: 700;
+
+            margin-bottom: 20px;
+
+        }
+
+        .hero h1 {
+
+            font-size: clamp(60px, 10vw, 130px);
+
+            line-height: 0.9;
+
+            font-weight: 900;
+
+            letter-spacing: -6px;
+
+            margin-bottom: 30px;
+
+        }
+
+        .hero h1 span {
+
+            color: #999;
+
+        }
+
+        .hero p {
+
+            max-width: 600px;
+
+            margin: auto;
+
+            color: #aaa;
+
+            font-size: 18px;
+
+        }
+
+        .hero-button {
+
+            display: inline-block;
+
+            margin-top: 35px;
+
+            padding: 15px 30px;
+
+            border: 1px solid #555;
+
+            border-radius: 6px;
+
+            font-weight: 800;
+
+            text-transform: uppercase;
+
+            letter-spacing: 1px;
+
+            transition: 0.3s;
+
+        }
+
+        .hero-button:hover {
+
+            background: white;
+
+            color: black;
+
+            transform: translateY(-3px);
+
+        }
+
+        section {
+
+            padding: 110px 7%;
+
+        }
+
+        .section-title {
+
+            text-align: center;
+
+            margin-bottom: 60px;
+
+        }
+
+        .section-title .small {
+
+            color: #777;
+
+            font-size: 13px;
+
+            font-weight: 800;
+
+            letter-spacing: 3px;
+
+            text-transform: uppercase;
+
+            margin-bottom: 10px;
+
+        }
+
+        .section-title h2 {
+
+            font-size: clamp(38px, 6vw, 70px);
+
+            line-height: 1;
+
+            letter-spacing: -3px;
+
+            font-weight: 900;
+
+        }
+
+        .section-title p {
+
+            color: #999;
+
+            max-width: 600px;
+
+            margin: 20px auto 0;
+
+        }
+
+        .product-section {
+
+            background: #0d0d0d;
+
+        }
+
+        .product-grid {
+
+            max-width: 1100px;
+
+            margin: auto;
+
+            display: grid;
+
+            grid-template-columns: 1fr 1fr;
+
+            gap: 70px;
+
+            align-items: center;
+
+        }
+
+        .product-image-container {
+
+            background: #111;
+
+            border: 1px solid #252525;
+
+            border-radius: 16px;
+
+            padding: 30px;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            min-height: 500px;
+
+            overflow: hidden;
+
+        }
+
+        .product-image {
+
+            width: 100%;
+
+            max-width: 480px;
+
+            height: auto;
+
+            object-fit: contain;
+
+            display: block;
+
+            transition: 0.4s;
+
+        }
+
+        .product-image:hover {
+
+            transform: scale(1.03);
+
+        }
+
+        .product-info .label {
+
+            color: #777;
+
+            font-size: 13px;
+
+            letter-spacing: 3px;
+
+            text-transform: uppercase;
+
+            font-weight: 800;
+
+            margin-bottom: 12px;
+
+        }
+
+        .product-info h3 {
+
+            font-size: 48px;
+
+            line-height: 1;
+
+            letter-spacing: -2px;
+
+            margin-bottom: 25px;
+
+        }
+
+        .product-info p {
+
+            color: #aaa;
+
+            font-size: 17px;
+
+            margin-bottom: 25px;
+
+        }
+
+        .flavors {
+
+            display: flex;
+
+            flex-wrap: wrap;
+
+            gap: 10px;
+
+            margin-top: 25px;
+
+        }
+
+        .flavor {
+
+            padding: 9px 14px;
+
+            border: 1px solid #333;
+
+            border-radius: 5px;
+
+            color: #ccc;
+
+            font-size: 12px;
+
+            font-weight: 800;
+
+            letter-spacing: 1px;
+
+        }
+
+        .about {
+
+            max-width: 1000px;
+
+            margin: auto;
+
+            text-align: center;
+
+        }
+
+        .about p {
+
+            color: #aaa;
+
+            font-size: 18px;
+
+            margin-bottom: 20px;
+
+        }
+
+        .about strong {
+
+            color: white;
+
+        }
+
+        .values-grid {
+
+            max-width: 1100px;
+
+            margin: auto;
+
+            display: grid;
+
+            grid-template-columns: repeat(5, 1fr);
+
+            gap: 15px;
+
+        }
+
+        .value-card {
+
+            padding: 30px 20px;
+
+            background: #111;
+
+            border: 1px solid #222;
+
+            border-radius: 10px;
+
+            text-align: center;
+
+            transition: 0.3s;
+
+        }
+
+        .value-card:hover {
+
+            transform: translateY(-6px);
+
+            border-color: #555;
+
+        }
+
+        .value-number {
+
+            font-size: 13px;
+
+            color: #666;
+
+            font-weight: 800;
+
+            margin-bottom: 20px;
+
+        }
+
+        .value-card h3 {
+
+            font-size: 17px;
+
+            margin-bottom: 10px;
+
+        }
+
+        .value-card p {
+
+            color: #888;
+
+            font-size: 13px;
+
+        }
+
+        .vision {
+
+            background: #0d0d0d;
+
+            text-align: center;
+
+        }
+
+        .vision-content {
+
+            max-width: 850px;
+
+            margin: auto;
+
+        }
+
+        .vision h2 {
+
+            font-size: clamp(40px, 7vw, 85px);
+
+            line-height: 0.95;
+
+            letter-spacing: -4px;
+
+            margin-bottom: 30px;
+
+        }
+
+        .vision p {
+
+            color: #999;
+
+            font-size: 18px;
+
+        }
+
+        .timeline {
+
+            max-width: 900px;
+
+            margin: auto;
+
+        }
+
+        .timeline-item {
+
+            display: grid;
+
+            grid-template-columns: 130px 1fr;
+
+            gap: 30px;
+
+            padding: 25px 0;
+
+            border-bottom: 1px solid #222;
+
+        }
+
+        .timeline-number {
+
+            color: #555;
+
+            font-size: 13px;
+
+            font-weight: 900;
+
+            letter-spacing: 2px;
+
+        }
+
+        .timeline-item h3 {
+
+            font-size: 22px;
+
+            margin-bottom: 5px;
+
+        }
+
+        .timeline-item p {
+
+            color: #888;
+
+        }
+
+        .instagram {
+
+            text-align: center;
+
+            background: #0d0d0d;
+
+        }
+
+        .instagram-name {
+
+            font-size: clamp(35px, 6vw, 65px);
+
+            font-weight: 900;
+
+            letter-spacing: -3px;
+
+            margin-bottom: 15px;
+
+        }
+
+        .instagram p {
+
+            color: #888;
+
+            margin-bottom: 25px;
+
+        }
+
+        .instagram-button {
+
+            display: inline-block;
+
+            padding: 13px 25px;
+
+            border: 1px solid #444;
+
+            border-radius: 5px;
+
+            font-weight: 800;
+
+            transition: 0.3s;
+
+        }
+
+        .instagram-button:hover {
+
+            background: white;
+
+            color: black;
+
+        }
+
+        footer {
+
+            padding: 50px 7%;
+
+            border-top: 1px solid #222;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: space-between;
+
+            color: #666;
+
+            font-size: 13px;
+
+        }
+
+        footer strong {
+
+            color: #aaa;
+
+        }
+
+        @media (max-width: 850px) {
+
+            nav {
+
+                padding: 0 5%;
+
+            }
+
+            nav ul {
+
+                gap: 12px;
+
+            }
+
+            nav ul li a {
+
+                font-size: 10px;
+
+            }
+
+            .hero h1 {
+
+                letter-spacing: -3px;
+
+            }
+
+            .product-grid {
+
+                grid-template-columns: 1fr;
+
+                gap: 40px;
+
+            }
+
+            .product-image-container {
+
+                min-height: auto;
+
+            }
+
+            .product-info h3 {
+
+                font-size: 40px;
+
+            }
+
+            .values-grid {
+
+                grid-template-columns: 1fr 1fr;
+
+            }
+
+            .timeline-item {
+
+                grid-template-columns: 80px 1fr;
+
+            }
+
+            footer {
+
+                flex-direction: column;
+
+                gap: 15px;
+
+                text-align: center;
+
+            }
+
+        }
+
+        @media (max-width: 500px) {
+
+            nav {
+
+                height: 62px;
+
+            }
+
+            .logo {
+
+                font-size: 22px;
+
+            }
+
+            nav ul {
+
+                gap: 8px;
+
+            }
+
+            nav ul li:nth-child(3),
+
+            nav ul li:nth-child(4) {
+
+                display: none;
+
+            }
+
+            section {
+
+                padding: 80px 5%;
+
+            }
+
+            .values-grid {
+
+                grid-template-columns: 1fr;
+
+            }
+
+            .timeline-item {
+
+                grid-template-columns: 1fr;
+
+                gap: 5px;
+
+            }
+
+        }
+</style>
+</head>
+<body>
+<nav>
+<a href="#home" class="logo">PWR<span>fuel</span></a>
+<ul>
+<li><a href="#produkt">Produkt</a></li>
+<li><a href="#omoss">Om oss</a></li>
+<li><a href="#verdier">Verdier</a></li>
+<li><a href="#kontakt">Kontakt</a></li>
+</ul>
+</nav>
+
+<section class="hero" id="home">
+<div class="hero-content">
+<div class="hero-small">
+
+                PWRfuel UB
+</div>
+<h1>
+
+                YOUR<br>
+<span>WORKOUT.</span><br>
+
+                YOUR PWR.
+</h1>
+<p>
+
+                Pre-workout gummies utviklet med fokus på smak,
+
+                innovasjon og en enklere treningsopplevelse.
+</p>
+<a href="#produkt" class="hero-button">
+
+                Oppdag PWRfuel
+</a>
+</div>
+</section>
+
+<section class="product-section" id="produkt">
+<div class="section-title">
+<div class="small">
+
+                Vårt produkt
+</div>
+<h2>
+
+                PWRfuel
+</h2>
+<p>
+
+                Pre-workout. Bare enklere.
+</p>
+</div>
+
+<div class="product-grid">
+<div class="product-image-container">
+<img
+
+                    src="bilde.png"
+
+                    alt="PWRfuel Pre-Workout Gummies"
+
+                    class="product-image"
+>
+</div>
+
+<div class="product-info">
+<div class="label">
+
+                    Pre-Workout Gummies
+</div>
+<h3>
+
+                    FUEL YOUR POTENTIAL.
+</h3>
+<p>
+
+                    PWRfuel utvikler smakfulle og innovative
+
+                    pre-workout-gummies med fokus på en praktisk
+
+                    og moderne treningsopplevelse.
+</p>
+<p>
+
+                    Produktet er utviklet med trening, smak og
+
+                    brukervennlighet i sentrum.
+</p>
+<div class="flavors">
+<div class="flavor">
+
+                        SOUR BERRY
+</div>
+<div class="flavor">
+
+                        BLUE RASPBERRY
+</div>
+<div class="flavor">
+
+                        TROPICAL
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<section id="omoss">
+<div class="section-title">
+<div class="small">
+
+                Om PWRfuel
+</div>
+<h2>
+
+                LAGET FOR<br>
+
+                TRENING.
+</h2>
+</div>
+
+<div class="about">
+<p>
+<strong>PWRfuel UB</strong> er en ungdomsbedrift
+
+                som ønsker å gjøre pre-workout enklere,
+
+                mer praktisk og mer spennende.
+</p>
+<p>
+
+                Vi utvikler et produkt med fokus på
+
+                innovasjon, smak, design og treningsglede.
+</p>
+<p>
+<strong>Laget av treningsfolk, for treningsfolk.</strong>
+</p>
+</div>
+</section>
+
+<section id="verdier">
+<div class="section-title">
+<div class="small">
+
+                Det vi står for
+</div>
+<h2>
+
+                VÅRE VERDIER
+</h2>
+</div>
+
+<div class="values-grid">
+<div class="value-card">
+<div class="value-number">01</div>
+<h3>Innovasjon</h3>
+<p>Vi utfordrer det tradisjonelle og tenker nytt.</p>
+</div>
+<div class="value-card">
+<div class="value-number">02</div>
+<h3>Kvalitet</h3>
+<p>Vi setter kvalitet og gode råvarer høyt.</p>
+</div>
+<div class="value-card">
+<div class="value-number">03</div>
+<h3>Fellesskap</h3>
+<p>Vi ønsker å skape noe sammen med treningsmiljøet.</p>
+</div>
+<div class="value-card">
+<div class="value-number">04</div>
+<h3>Bærekraft</h3>
+<p>Vi vurderer emballasje, produksjon og transport.</p>
+</div>
+<div class="value-card">
+<div class="value-number">05</div>
+<h3>Pågangsmot</h3>
+<p>Vi gir oss ikke før produktet er klart.</p>
+</div>
+</div>
+</section>
+
+<section class="vision">
+<div class="vision-content">
+<div class="section-title">
+<div class="small">
+
+                    Vår visjon
+</div>
+</div>
+<h2>
+
+                MAKE EVERY<br>
+
+                WORKOUT<br>
+
+                COUNT.
+</h2>
+<p>
+
+                Vi ønsker å bygge et norsk treningsbrand
+
+                med fokus på innovasjon, fellesskap og
+
+                produkter som passer inn i en aktiv hverdag.
+</p>
+</div>
+</section>
+
+<section>
+<div class="section-title">
+<div class="small">
+
+                Vår reise
+</div>
+<h2>
+
+                FRA IDÉ<br>
+
+                TIL PRODUKT.
+</h2>
+</div>
+
+<div class="timeline">
+<div class="timeline-item">
+<div class="timeline-number">01</div>
+<div>
+<h3>Idé</h3>
+<p>Vi så muligheten for en enklere og mer praktisk pre-workout.</p>
+</div>
+</div>
+<div class="timeline-item">
+<div class="timeline-number">02</div>
+<div>
+<h3>Prototype</h3>
+<p>Vi begynte å utvikle smak, form og konsistens.</p>
+</div>
+</div>
+<div class="timeline-item">
+<div class="timeline-number">03</div>
+<div>
+<h3>Testing</h3>
+<p>Vi tester og forbedrer produktet basert på tilbakemeldinger.</p>
+</div>
+</div>
+<div class="timeline-item">
+<div class="timeline-number">04</div>
+<div>
+<h3>Utvikling</h3>
+<p>Vi jobber videre med design, emballasje og produktløsning.</p>
+</div>
+</div>
+<div class="timeline-item">
+<div class="timeline-number">05</div>
+<div>
+<h3>Lansering</h3>
+<p>Målet er å gjøre PWRfuel klar for markedet.</p>
+</div>
+</div>
+</div>
+</section>
+
+<section class="instagram" id="kontakt">
+<div class="section-title">
+<div class="small">
+
+                Følg reisen
+</div>
+<h2>
+
+                PWRFUEL
+</h2>
+</div>
+<div class="instagram-name">
+
+            @pwrfuel.ub
+</div>
+<p>
+
+            Følg oss for produktutvikling,
+
+            nyheter og oppdateringer.
+</p>
+<a
+
+            href="https://www.instagram.com/pwrfuel.ub/"
+
+            target="_blank"
+
+            class="instagram-button"
+>
+
+            Følg oss på Instagram
+</a>
+</section>
+
+<footer>
+<div>
+
+            © 2026 <strong>PWRfuel UB</strong>
+</div>
+<div>
+
+            FUEL YOUR POTENTIAL
+</div>
+</footer>
+</body>
+</html>
+ 
