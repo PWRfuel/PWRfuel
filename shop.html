@@ -1,0 +1,676 @@
+<!DOCTYPE html>
+<html lang="no">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>PWRfuel | Våre smaker</title>
+
+    <meta
+        name="description"
+        content="Se alle PWRfuel sine pre-workout gummies og finn din favorittsmak."
+    >
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: #080808;
+            color: #ffffff;
+            line-height: 1.6;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        /* NAV */
+
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 72px;
+
+            background: rgba(8, 8, 8, 0.94);
+
+            backdrop-filter: blur(12px);
+
+            border-bottom: 1px solid #222;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            padding: 0 7%;
+
+            z-index: 1000;
+        }
+
+        .logo {
+            font-size: 27px;
+            font-weight: 900;
+            letter-spacing: -1px;
+        }
+
+        .logo span {
+            color: #999;
+        }
+
+        nav ul {
+            display: flex;
+            gap: 30px;
+            list-style: none;
+        }
+
+        nav ul li a {
+            font-size: 14px;
+            font-weight: 700;
+
+            text-transform: uppercase;
+
+            letter-spacing: 1px;
+
+            color: #bbbbbb;
+
+            transition: 0.3s;
+        }
+
+        nav ul li a:hover {
+            color: white;
+        }
+
+        /* HEADER */
+
+        .shop-header {
+            padding: 170px 7% 80px;
+
+            text-align: center;
+
+            background:
+                radial-gradient(
+                    circle at center,
+                    #1b1b1b 0%,
+                    #080808 60%
+                );
+        }
+
+        .shop-small {
+            color: #777;
+
+            font-size: 13px;
+
+            font-weight: 800;
+
+            letter-spacing: 4px;
+
+            text-transform: uppercase;
+
+            margin-bottom: 15px;
+        }
+
+        .shop-header h1 {
+            font-size: clamp(55px, 9vw, 110px);
+
+            line-height: 0.9;
+
+            font-weight: 900;
+
+            letter-spacing: -5px;
+
+            margin-bottom: 25px;
+        }
+
+        .shop-header p {
+            max-width: 600px;
+
+            margin: auto;
+
+            color: #999;
+
+            font-size: 18px;
+        }
+
+        /* PRODUCTS */
+
+        .products-section {
+            padding: 30px 7% 120px;
+
+            background: #080808;
+        }
+
+        .products-grid {
+            max-width: 1250px;
+
+            margin: auto;
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(3, minmax(0, 1fr));
+
+            gap: 22px;
+        }
+
+        .product-card {
+            background: #111;
+
+            border: 1px solid #252525;
+
+            border-radius: 14px;
+
+            overflow: hidden;
+
+            transition:
+                transform 0.3s ease,
+                border-color 0.3s ease;
+        }
+
+        .product-card:hover {
+            transform: translateY(-7px);
+
+            border-color: #444;
+        }
+
+        .product-image {
+            width: 100%;
+
+            aspect-ratio: 0.78;
+
+            object-fit: cover;
+
+            display: block;
+
+            transition: 0.4s ease;
+        }
+
+        .product-card:hover .product-image {
+            transform: scale(1.02);
+        }
+
+        .product-info {
+            padding: 25px;
+        }
+
+        .product-label {
+            color: #666;
+
+            font-size: 12px;
+
+            font-weight: 800;
+
+            letter-spacing: 2px;
+
+            text-transform: uppercase;
+
+            margin-bottom: 8px;
+        }
+
+        .product-info h2 {
+            font-size: 30px;
+
+            line-height: 1;
+
+            letter-spacing: -1px;
+
+            margin-bottom: 15px;
+        }
+
+        .product-description {
+            color: #999;
+
+            font-size: 14px;
+
+            margin-bottom: 20px;
+
+            min-height: 65px;
+        }
+
+        .product-price {
+            font-size: 17px;
+
+            font-weight: 900;
+
+            margin-bottom: 20px;
+        }
+
+        .coming-soon {
+            display: inline-block;
+
+            padding: 9px 13px;
+
+            border: 1px solid #444;
+
+            border-radius: 5px;
+
+            color: #ddd;
+
+            font-size: 11px;
+
+            font-weight: 900;
+
+            letter-spacing: 1.5px;
+
+            text-transform: uppercase;
+        }
+
+        .product-button {
+            display: block;
+
+            width: 100%;
+
+            margin-top: 20px;
+
+            padding: 13px;
+
+            border: 1px solid #444;
+
+            border-radius: 5px;
+
+            text-align: center;
+
+            font-size: 13px;
+
+            font-weight: 900;
+
+            text-transform: uppercase;
+
+            letter-spacing: 1px;
+
+            color: #777;
+
+            cursor: default;
+        }
+
+        /* BACK BUTTON */
+
+        .back-section {
+            text-align: center;
+
+            padding: 0 7% 100px;
+        }
+
+        .back-button {
+            display: inline-block;
+
+            padding: 14px 25px;
+
+            border: 1px solid #444;
+
+            border-radius: 5px;
+
+            font-weight: 800;
+
+            text-transform: uppercase;
+
+            letter-spacing: 1px;
+
+            transition: 0.3s;
+        }
+
+        .back-button:hover {
+            background: white;
+
+            color: black;
+        }
+
+        /* FOOTER */
+
+        footer {
+            padding: 50px 7%;
+
+            border-top: 1px solid #222;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: space-between;
+
+            color: #666;
+
+            font-size: 13px;
+        }
+
+        footer strong {
+            color: #aaa;
+        }
+
+        /* TABLET */
+
+        @media (max-width: 900px) {
+
+            nav {
+                padding: 0 5%;
+            }
+
+            nav ul {
+                gap: 12px;
+            }
+
+            nav ul li a {
+                font-size: 10px;
+            }
+
+            .products-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+
+        }
+
+        /* MOBILE */
+
+        @media (max-width: 600px) {
+
+            nav {
+                height: 62px;
+            }
+
+            .logo {
+                font-size: 22px;
+            }
+
+            nav ul {
+                gap: 8px;
+            }
+
+            nav ul li:nth-child(3),
+            nav ul li:nth-child(4) {
+                display: none;
+            }
+
+            .shop-header {
+                padding: 130px 5% 60px;
+            }
+
+            .shop-header h1 {
+                letter-spacing: -3px;
+            }
+
+            .products-section {
+                padding: 20px 5% 80px;
+            }
+
+            .products-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .product-info {
+                padding: 22px;
+            }
+
+            footer {
+                flex-direction: column;
+
+                gap: 15px;
+
+                text-align: center;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <!-- NAV -->
+
+    <nav>
+
+        <a href="index.html" class="logo">
+            PWR<span>fuel</span>
+        </a>
+
+        <ul>
+
+            <li>
+                <a href="index.html#produkt">
+                    Produkt
+                </a>
+            </li>
+
+            <li>
+                <a href="index.html#omoss">
+                    Om oss
+                </a>
+            </li>
+
+            <li>
+                <a href="index.html#verdier">
+                    Verdier
+                </a>
+            </li>
+
+            <li>
+                <a href="index.html#kontakt">
+                    Kontakt
+                </a>
+            </li>
+
+            <li>
+                <a href="shop.html">
+                    Kjøp
+                </a>
+            </li>
+
+        </ul>
+
+    </nav>
+
+
+    <!-- HEADER -->
+
+    <header class="shop-header">
+
+        <div class="shop-small">
+            PWRfuel
+        </div>
+
+        <h1>
+            CHOOSE<br>
+            YOUR PWR.
+        </h1>
+
+        <p>
+            Tre smaker. Én treningsopplevelse.
+            Finn smaken som passer deg.
+        </p>
+
+    </header>
+
+
+    <!-- PRODUCTS -->
+
+    <section class="products-section">
+
+        <div class="products-grid">
+
+
+            <!-- TROPICAL -->
+
+            <article class="product-card">
+
+                <img
+                    src="IMG_4802.jpeg"
+                    alt="PWRfuel Tropical Pre-Workout Gummies"
+                    class="product-image"
+                >
+
+                <div class="product-info">
+
+                    <div class="product-label">
+                        Pre-Workout Gummies
+                    </div>
+
+                    <h2>
+                        Tropical
+                    </h2>
+
+                    <p class="product-description">
+                        En frisk og tropisk smak utviklet
+                        for deg som ønsker en annerledes
+                        og mer praktisk pre-workout.
+                    </p>
+
+                    <div class="product-price">
+                        Pris: Kommer snart
+                    </div>
+
+                    <span class="coming-soon">
+                        Kommer snart
+                    </span>
+
+                    <div class="product-button">
+                        Ikke tilgjengelig ennå
+                    </div>
+
+                </div>
+
+            </article>
+
+
+            <!-- SOUR BERRY -->
+
+            <article class="product-card">
+
+                <img
+                    src="IMG_4801.jpeg"
+                    alt="PWRfuel Sour Berry Pre-Workout Gummies"
+                    class="product-image"
+                >
+
+                <div class="product-info">
+
+                    <div class="product-label">
+                        Pre-Workout Gummies
+                    </div>
+
+                    <h2>
+                        Sour Berry
+                    </h2>
+
+                    <p class="product-description">
+                        En frisk bærsmak med syrlig karakter,
+                        utviklet for en smakfull og enkel
+                        treningsopplevelse.
+                    </p>
+
+                    <div class="product-price">
+                        Pris: Kommer snart
+                    </div>
+
+                    <span class="coming-soon">
+                        Kommer snart
+                    </span>
+
+                    <div class="product-button">
+                        Ikke tilgjengelig ennå
+                    </div>
+
+                </div>
+
+            </article>
+
+
+            <!-- FOREST BERRIES -->
+
+            <article class="product-card">
+
+                <img
+                    src="IMG_4800.jpeg"
+                    alt="PWRfuel Forest Berries Pre-Workout Gummies"
+                    class="product-image"
+                >
+
+                <div class="product-info">
+
+                    <div class="product-label">
+                        Pre-Workout Gummies
+                    </div>
+
+                    <h2>
+                        Forest Berries
+                    </h2>
+
+                    <p class="product-description">
+                        En rik bærsmak med en blanding av
+                        mørke og røde bær for en kraftig
+                        og smakfull opplevelse.
+                    </p>
+
+                    <div class="product-price">
+                        Pris: Kommer snart
+                    </div>
+
+                    <span class="coming-soon">
+                        Kommer snart
+                    </span>
+
+                    <div class="product-button">
+                        Ikke tilgjengelig ennå
+                    </div>
+
+                </div>
+
+            </article>
+
+
+        </div>
+
+    </section>
+
+
+    <!-- BACK -->
+
+    <section class="back-section">
+
+        <a
+            href="index.html"
+            class="back-button"
+        >
+            Tilbake til PWRfuel
+        </a>
+
+    </section>
+
+
+    <!-- FOOTER -->
+
+    <footer>
+
+        <div>
+            © 2026 <strong>PWRfuel UB</strong>
+        </div>
+
+        <div>
+            FUEL YOUR POTENTIAL
+        </div>
+
+    </footer>
+
+
+</body>
+
+</html>
