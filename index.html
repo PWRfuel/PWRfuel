@@ -11,37 +11,38 @@
 
     <style>
         /* ============================= */
-/* FLAVOR SHOWCASE */
-/* ============================= */
+        /* FLAVOR SHOWCASE */
+        /* ============================= */
 
-.flavor-showcase {
-    background: #080808;
-    text-align: center;
-}
+        .flavor-showcase {
+            background: #080808;
+            text-align: center;
+        }
 
-.flavor-showcase-image {
-    max-width: 1100px;
-    margin: 0 auto 35px;
-    border-radius: 16px;
-    overflow: hidden;
-    border: 1px solid #222;
-    background: #111;
-}
+        .flavor-showcase-image {
+            max-width: 1100px;
+            margin: 0 auto 35px;
+            border-radius: 16px;
+            overflow: hidden;
+            border: 1px solid #222;
+            background: #111;
+        }
 
-.flavor-showcase-image img {
-    width: 100%;
-    height: auto;
-    display: block;
-    transition: 0.5s ease;
-}
+        .flavor-showcase-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+            transition: 0.5s ease;
+        }
 
-.flavor-showcase-image img:hover {
-    transform: scale(1.02);
-}
+        .flavor-showcase-image img:hover {
+            transform: scale(1.02);
+        }
 
-.flavor-showcase-button {
-    text-align: center;
-}
+        .flavor-showcase-button {
+            text-align: center;
+        }
+
         * {
             margin: 0;
             padding: 0;
@@ -429,6 +430,47 @@
             color: #aaa;
         }
 
+        .contact-section {
+            background: #0d0d0d;
+            text-align: center;
+        }
+
+        .contact-grid {
+            max-width: 1100px;
+            margin: auto;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .contact-card {
+            background: #111;
+            border: 1px solid #222;
+            border-radius: 10px;
+            padding: 35px 25px;
+        }
+
+        .contact-card h3 {
+            margin-bottom: 8px;
+        }
+
+        .contact-role {
+            color: #777;
+            font-size: 13px;
+            font-weight: 800;
+            margin-bottom: 20px;
+        }
+
+        .contact-card p {
+            color: #aaa;
+            font-size: 14px;
+            margin-bottom: 8px;
+        }
+
+        .contact-card a {
+            color: #ccc;
+        }
+
         @media (max-width: 850px) {
 
             nav {
@@ -573,11 +615,8 @@
 
             <div class="product-image-container">
 
-                <img
-                    src="Screenshot 2026-10-05 at 14.59.47.png"
-                    alt="PWRfuel Pre-Workout Gummies"
-                    class="product-image"
-                >
+                <img src="Screenshot 2026-10-05 at 14.59.47.png" alt="PWRfuel Pre-Workout Gummies"
+                    class="product-image">
 
             </div>
 
@@ -609,7 +648,7 @@
                     </div>
 
                     <div class="flavor">
-                        FOREST BERRIES 
+                        FOREST BERRIES
                     </div>
 
                     <div class="flavor">
@@ -626,40 +665,37 @@
 
     <section class="flavor-showcase">
 
-    <div class="section-title">
+        <div class="section-title">
 
-        <div class="small">
-            Våre smaker
+            <div class="small">
+                Våre smaker
+            </div>
+
+            <h2>
+                FINN DIN PWR.
+            </h2>
+
+            <p>
+                Tre smaker. Én PWRfuel-opplevelse.
+            </p>
+
         </div>
 
-        <h2>
-            FINN DIN PWR.
-        </h2>
+        <div class="flavor-showcase-image">
 
-        <p>
-            Tre smaker. Én PWRfuel-opplevelse.
-        </p>
+            <img src="Screenshot 2026-10-05 at 14.59.47.png" alt="PWRfuel Tropical, Sour Berry og Forest Berries">
 
-    </div>
+        </div>
 
-    <div class="flavor-showcase-image">
+        <div class="flavor-showcase-button">
 
-        <img
-            src="Screenshot 2026-10-05 at 14.59.47.png"
-            alt="PWRfuel Tropical, Sour Berry og Forest Berries"
-        >
+            <a href="shop.html" class="hero-button">
+                Se alle smaker
+            </a>
 
-    </div>
+        </div>
 
-    <div class="flavor-showcase-button">
-
-        <a href="shop.html" class="hero-button">
-            Se alle smaker
-        </a>
-
-    </div>
-
-</section>
+    </section>
 
     <section id="omoss">
 
@@ -871,38 +907,32 @@
 
     </section>
 
-    <section class="instagram" id="kontakt">
-
+    <section class="contact-section" id="kontakt">
         <div class="section-title">
-
-            <div class="small">
-                Følg reisen
+            <div class="small">Ta kontakt</div>
+            <h2>KONTAKT OSS</h2>
+            <p>Har du spørsmål? Ta gjerne kontakt med oss.</p>
+        </div>
+        <div class="contact-grid">
+            <div class="contact-card">
+                <h3>Lukas Alexander Orring</h3>
+                <div class="contact-role">Markedssjef</div>
+                <p>E-post: <a href="mailto:lukasorring@icloud.com">lukasorring@icloud.com</a></p>
+                <p>Telefon: <a href="tel:921161424">92 11 61 24</a></p>
             </div>
-
-            <h2>
-                PWRFUEL
-            </h2>
-
+            <div class="contact-card">
+                <h3>Adrian Langvik Olsen</h3>
+                <div class="contact-role">Daglig leder</div>
+                <p>E-post: <a href="mailto:AdrianLangvikOlsen@gmail.com">AdrianLangvikOlsen@gmail.com</a></p>
+                <p>Telefon: <a href="tel:94842650">94 84 26 50</a></p>
+            </div>
+            <div class="contact-card">
+                <h3>Tristan Schie</h3>
+                <div class="contact-role">Økonomisjef</div>
+                <p>E-post: <a href="mailto:tristanschie@gmail.com">tristanschie@gmail.com</a></p>
+                <p>Telefon: <a href="tel:97437406">97 43 74 06</a></p>
+            </div>
         </div>
-
-        <div class="instagram-name">
-            @pwrfuel.ub
-        </div>
-
-        <p>
-            Følg oss for produktutvikling,
-            nyheter og oppdateringer.
-        </p>
-
-        <a
-            href="https://www.instagram.com/pwrfuel_ub/"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="instagram-button"
-        >
-            Følg oss på Instagram
-        </a>
-
     </section>
 
     <footer>
