@@ -604,32 +604,18 @@
     const navLinks = document.querySelector('.nav-links');
     const links = document.querySelectorAll('.nav-links a');
 
+    // Åpne/lukke meny
     hamburger.addEventListener('click', () => {
         hamburger.classList.toggle('active');
         navLinks.classList.toggle('open');
     });
 
-    // Lukk menyen FØR scroll
+    // Lukk menyen når man klikker på en lenke,
+    // men la nettleseren håndtere href (#kontakt, #produkt osv.)
     links.forEach(link => {
-        link.addEventListener('click', (e) => {
-            // Hent href (#produkt, #kontakt osv.)
-            const target = link.getAttribute('href');
-
-            // Lukk menyen
+        link.addEventListener('click', () => {
             navLinks.classList.remove('open');
             hamburger.classList.remove('active');
-
-            // Vent 50ms slik at menyen rekker å lukke seg
-            setTimeout(() => {
-                if (target.startsWith('#')) {
-                    document.querySelector(target).scrollIntoView({ behavior: 'smooth' });
-                } else {
-                    window.location.href = target;
-                }
-            }, 50);
-
-            // Hindrer at nettleseren prøver å scrolle før menyen er lukket
-            e.preventDefault();
         });
     });
 </script>
