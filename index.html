@@ -609,11 +609,27 @@
         navLinks.classList.toggle('open');
     });
 
-    // Lukk menyen når man klikker på en link
+    // Lukk menyen FØR scroll
     links.forEach(link => {
-        link.addEventListener('click', () => {
+        link.addEventListener('click', (e) => {
+            // Hent href (#produkt, #kontakt osv.)
+            const target = link.getAttribute('href');
+
+            // Lukk menyen
             navLinks.classList.remove('open');
             hamburger.classList.remove('active');
+
+            // Vent 50ms slik at menyen rekker å lukke seg
+            setTimeout(() => {
+                if (target.startsWith('#')) {
+                    document.querySelector(target).scrollIntoView({ behavior: 'smooth' });
+                } else {
+                    window.location.href = target;
+                }
+            }, 50);
+
+            // Hindrer at nettleseren prøver å scrolle før menyen er lukket
+            e.preventDefault();
         });
     });
 </script>
