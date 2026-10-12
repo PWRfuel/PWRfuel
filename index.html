@@ -35,6 +35,7 @@
             padding: 110px 7%;
         }
 
+        /* NAVBAR */
         nav {
             position: fixed;
             top: 0;
@@ -61,13 +62,14 @@
             color: #a0a0a0;
         }
 
-        nav ul {
+        /* Desktop menu */
+        .nav-links {
             display: flex;
             gap: 30px;
             list-style: none;
         }
 
-        nav ul li a {
+        .nav-links li a {
             font-size: 14px;
             font-weight: 700;
             text-transform: uppercase;
@@ -76,9 +78,70 @@
             transition: 0.3s;
         }
 
-        nav ul li a:hover {
+        .nav-links li a:hover {
             color: white;
         }
+
+        /* Hamburger icon */
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            cursor: pointer;
+        }
+
+        .hamburger span {
+            width: 28px;
+            height: 3px;
+            background: #fff;
+            border-radius: 3px;
+            transition: 0.3s;
+        }
+
+        /* MOBILE MENU */
+        @media (max-width: 700px) {
+
+            .hamburger {
+                display: flex;
+            }
+
+            .nav-links {
+                position: fixed;
+                top: 72px;
+                right: -100%;
+                width: 70%;
+                height: calc(100vh - 72px);
+                background: #111;
+                flex-direction: column;
+                padding: 40px 20px;
+                gap: 25px;
+                transition: 0.3s ease;
+                border-left: 1px solid #222;
+            }
+
+            .nav-links.open {
+                right: 0;
+            }
+
+            .nav-links li a {
+                font-size: 16px;
+            }
+
+            /* Hamburger animation */
+            .hamburger.active span:nth-child(1) {
+                transform: translateY(8px) rotate(45deg);
+            }
+
+            .hamburger.active span:nth-child(2) {
+                opacity: 0;
+            }
+
+            .hamburger.active span:nth-child(3) {
+                transform: translateY(-8px) rotate(-45deg);
+            }
+        }
+
+        /* RESTEN AV CSS-EN DIN ER UENDRET UNDER HER */
 
         .hero {
             min-height: 100vh;
@@ -458,14 +521,6 @@
                 padding: 0 5%;
             }
 
-            nav ul {
-                gap: 12px;
-            }
-
-            nav ul li a {
-                font-size: 10px;
-            }
-
             .hero h1 {
                 letter-spacing: -3px;
             }
@@ -486,15 +541,6 @@
                 font-size: 22px;
             }
 
-            nav ul {
-                gap: 8px;
-            }
-
-            nav ul li:nth-child(3),
-            nav ul li:nth-child(4) {
-                display: none;
-            }
-
             section {
                 padding: 80px 5%;
             }
@@ -511,13 +557,20 @@
 
     <nav>
         <a href="#home" class="logo">PWR<span>fuel</span></a>
-        <ul>
+
+        <ul class="nav-links">
             <li><a href="#produkt">Produkt</a></li>
             <li><a href="#omoss">Om oss</a></li>
             <li><a href="#verdier">Verdier</a></li>
             <li><a href="#kontakt">Kontakt</a></li>
             <li><a href="shop.html">Kjøp</a></li>
         </ul>
+
+        <div class="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
     </nav>
 
     <section class="hero" id="home">
@@ -615,160 +668,4 @@
 
         <div class="values-grid">
             <div class="value-card">
-                <div class="value-number">01</div>
-                <h3>Innovasjon</h3>
-                <p>Vi utfordrer det tradisjonelle og tenker nytt.</p>
-            </div>
-
-            <div class="value-card">
-                <div class="value-number">02</div>
-                <h3>Kvalitet</h3>
-                <p>Vi setter kvalitet og gode råvarer høyt.</p>
-            </div>
-
-            <div class="value-card">
-                <div class="value-number">03</div>
-                <h3>Fellesskap</h3>
-                <p>Vi ønsker å skape noe sammen med treningsmiljøet.</p>
-            </div>
-
-            <div class="value-card">
-                <div class="value-number">04</div>
-                <h3>Bærekraft</h3>
-                <p>Vi vurderer emballasje, produksjon og transport.</p>
-            </div>
-
-            <div class="value-card">
-                <div class="value-number">05</div>
-                <h3>Pågangsmot</h3>
-                <p>Vi gir oss ikke før produktet er klart.</p>
-            </div>
-        </div>
-    </section>
-
-    <section class="vision">
-        <div class="vision-content">
-            <div class="section-title">
-                <div class="small">Vår visjon</div>
-            </div>
-
-            <h2>
-                MAKE EVERY<br>
-                WORKOUT<br>
-                COUNT.
-            </h2>
-
-            <p>
-                Vi ønsker å bygge et norsk treningsbrand
-                med fokus på innovasjon, fellesskap og
-                produkter som passer inn i en aktiv hverdag.
-            </p>
-        </div>
-    </section>
-
-    <section>
-        <div class="section-title">
-            <div class="small">Vår reise</div>
-            <h2>FRA IDÉ<br>TIL PRODUKT.</h2>
-        </div>
-
-        <div class="timeline">
-            <div class="timeline-item">
-                <div class="timeline-number">01</div>
-                <div>
-                    <h3>Idé</h3>
-                    <p>Vi så muligheten for en enklere og mer praktisk pre-workout.</p>
-                </div>
-            </div>
-
-            <div class="timeline-item">
-                <div class="timeline-number">02</div>
-                <div>
-                    <h3>Prototype</h3>
-                    <p>Vi begynte å utvikle smak, form og konsistens.</p>
-                </div>
-            </div>
-
-            <div class="timeline-item">
-                <div class="timeline-number">03</div>
-                <div>
-                    <h3>Testing</h3>
-                    <p>Vi tester og forbedrer produktet basert på tilbakemeldinger.</p>
-                </div>
-            </div>
-
-            <div class="timeline-item">
-                <div class="timeline-number">04</div>
-                <div>
-                    <h3>Utvikling</h3>
-                    <p>Vi jobber videre med design, emballasje og produktløsning.</p>
-                </div>
-            </div>
-
-            <div class="timeline-item">
-                <div class="timeline-number">05</div>
-                <div>
-                    <h3>Lansering</h3>
-                    <p>Målet er å gjøre PWRfuel klar for markedet.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="contact-section" id="kontakt">
-        <div class="section-title">
-            <div class="small">Ta kontakt</div>
-            <h2>KONTAKT OSS</h2>
-            <p>Har du spørsmål? Ta gjerne kontakt med oss.</p>
-        </div>
-
-        <div class="contact-grid">
-            <div class="contact-card">
-                <h3>Adrian Langvik Olsen</h3>
-                <div class="contact-role">Daglig leder</div>
-                <p>E-post: <a href="mailto:AdrianLangvikOlsen@gmail.com">AdrianLangvikOlsen@gmail.com</a></p>
-                <p>Telefon: <a href="tel:94842650">94 84 26 50</a></p>
-            </div>
-
-            <div class="contact-card">
-                <h3>Lukas Alexander Orring</h3>
-                <div class="contact-role">Salgs- og Markedssjef</div>
-                <p>E-post: <a href="mailto:lukasorring@icloud.com">lukasorring@icloud.com</a></p>
-                <p>Telefon: <a href="tel:92116124">92 11 61 24</a></p>
-            </div>
-
-            <div class="contact-card">
-                <h3>Tristan Schie</h3>
-                <div class="contact-role">Økonomisjef</div>
-                <p>E-post: <a href="mailto:tristanschie@gmail.com">tristanschie@gmail.com</a></p>
-                <p>Telefon: <a href="tel:97437406">97 43 74 06</a></p>
-            </div>
-
-            <div class="contact-card">
-                <h3>Emil Iversen</h3>
-                <div class="contact-role">Produksjonssjef</div>
-                <p>E-post: <a href="mailto:emiliversen09@gmail.com">emiliversen09@gmail.com</a></p>
-                <p>Telefon: <a href="tel:92223297">92 22 32 97</a></p>
-            </div>
-        </div>
-    </section>
-
-    <section class="instagram">
-        <div class="section-title">
-            <div class="small">Følg reisen</div>
-            <h2>PWRFUEL</h2>
-        </div>
-        <p>Følg oss for produktutvikling, nyheter og oppdateringer.</p>
-        <a href="https://www.instagram.com/pwrfuel_ub/" target="_blank" rel="noopener noreferrer" class="instagram-button">
-            Følg oss på Instagram
-        </a>
-    </section>
-
-    <footer>
-        <div>© 2026 <strong>PWRfuel UB</strong></div>
-        <div>FUEL YOUR POTENTIAL</div>
-    </footer>
-
-</body>
-
-</html>
+                <div class="value-number">01
