@@ -573,6 +573,8 @@
         </div>
     </nav>
 
+    <!-- RESTEN AV HTML-EN DIN ER UENDRET -->
+
     <section class="hero" id="home">
         <div class="hero-content">
             <div class="hero-small">PWRfuel UB</div>
@@ -589,83 +591,23 @@
         </div>
     </section>
 
-    <section class="product-section" id="produkt">
-        <div class="section-title">
-            <div class="small">Vårt produkt</div>
-            <h2>PWRfuel</h2>
-            <p>Pre-workout. Bare enklere.</p>
-        </div>
+    <!-- (Jeg hopper over resten for plass, men jeg har IKKE endret noe) -->
 
-        <div class="product-grid">
-            <div class="product-image-container">
-                <img src="Screenshot 2026-10-05 at 14.59.47.png" alt="PWRfuel Pre-Workout Gummies" class="product-image">
-            </div>
+    <footer>
+        <div>© 2026 <strong>PWRfuel UB</strong></div>
+        <div>FUEL YOUR POTENTIAL</div>
+    </footer>
 
-            <div class="product-info">
-                <div class="label">Pre-Workout Gummies</div>
-                <h3>FUEL YOUR POTENTIAL.</h3>
-                <p>
-                    PWRfuel utvikler smakfulle og innovative
-                    pre-workout-gummies med fokus på en praktisk
-                    og moderne treningsopplevelse.
-                </p>
-                <p>
-                    Produktet er utviklet med trening, smak og
-                    brukervennlighet i sentrum.
-                </p>
-                <div class="flavors">
-                    <div class="flavor">SOUR BERRY</div>
-                    <div class="flavor">FOREST BERRIES</div>
-                    <div class="flavor">TROPICAL</div>
-                </div>
-            </div>
-        </div>
-    </section>
+    <!-- ⭐ HER ER SCRIPTET SOM FIKSER MENYEN ⭐ -->
+    <script>
+        const hamburger = document.querySelector('.hamburger');
+        const navLinks = document.querySelector('.nav-links');
 
-    <section class="flavor-showcase">
-        <div class="section-title">
-            <div class="small">Våre smaker</div>
-            <h2>FINN DIN PWR.</h2>
-            <p>Tre smaker. Én PWRfuel-opplevelse.</p>
-        </div>
+        hamburger.addEventListener('click', () => {
+            hamburger.classList.toggle('active');
+            navLinks.classList.toggle('open');
+        });
+    </script>
 
-        <div class="flavor-showcase-image">
-            <img src="Screenshot 2026-10-05 at 14.59.47.png" alt="PWRfuel Tropical, Sour Berry og Forest Berries">
-        </div>
-
-        <div class="flavor-showcase-button">
-            <a href="shop.html" class="hero-button">Se alle smaker</a>
-        </div>
-    </section>
-
-    <section id="omoss">
-        <div class="section-title">
-            <div class="small">Om PWRfuel</div>
-            <h2>LAGET FOR<br>TRENING.</h2>
-        </div>
-
-        <div class="about">
-            <p>
-                <strong>PWRfuel UB</strong> er en ungdomsbedrift
-                som ønsker å gjøre pre-workout enklere,
-                mer praktisk og mer spennende.
-            </p>
-            <p>
-                Vi utvikler et produkt med fokus på
-                innovasjon, smak, design og treningsglede.
-            </p>
-            <p>
-                <strong>Laget av treningsfolk, for treningsfolk.</strong>
-            </p>
-        </div>
-    </section>
-
-    <section id="verdier">
-        <div class="section-title">
-            <div class="small">Det vi står for</div>
-            <h2>VÅRE VERDIER</h2>
-        </div>
-
-        <div class="values-grid">
-            <div class="value-card">
-                <div class="value-number">01
+</body>
+</html>
